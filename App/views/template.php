@@ -7,7 +7,8 @@
     <title>Curso MVC</title>
 </head>
 <body>
-    
+    <h2>Gestão do conhecimento</h2>
+    <a href="/">Home </a>|<a href="/notes/criar"> Cadastrar novo</a>
     <?php require_once '../App/views/'.$view.'.php';  ?>
 
 
