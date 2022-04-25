@@ -7,7 +7,6 @@ if(!empty($data['mensagem'])){
         echo $m."<br>";
     }
 }
-
 ?>
 
 <form action="/notes/criar" method="post">

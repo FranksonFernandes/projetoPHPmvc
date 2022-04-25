@@ -58,6 +58,22 @@ class Note extends Model{
         else{
             return "Erro ao cadastrar!";
         }
-    } 
+    }
+    
+    public function delete($id){
+
+        $sql = "DELETE FROM notes WHERE ID = ?";
+        $stmt = Model::getConn()->prepare($sql); 
+        $stmt->bindValue(1, $id);
+
+
+        if($stmt->execute()){
+            return "Excluído com sucesso!";
+        }
+
+        else{
+            return "Erro ao excluir!";
+        }
+    }
 
 }

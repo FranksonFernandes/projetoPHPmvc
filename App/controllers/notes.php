@@ -28,4 +28,13 @@ class Notes extends Controller{
 
     }
 
+    public function excluir($id = ''){
+        $mensagem = array();
+        $note = $this->model('Note');
+        $mensagem[] = $note->delete($id);
+        $dados = $note->getAll(); //Recupera lista de dados pós exclusão
+        $this->view('home/index', $dados = ['registros'=> $dados, 'mensagem'=> $mensagem]);
+
+    }
+
 }
