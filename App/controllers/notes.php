@@ -14,19 +14,34 @@ class Notes extends Controller{
     public function criar(){
 
         $mensagem = array();
+       
+        if(isset($_POST['salvar'])):  //verifica se o botão salvar foi clicado
 
-        if(isset($_POST['salvar'])){
+            //Verificando se o campo titulo está vazio:
+            if(empty($_POST['titulo'])):
+                $mensagem[] = "Título não pode estar em branco!";
+            
+            //Verificando se o campo solução está vazio:    
+            elseif(empty($_POST['texto'])):
+                $mensagem[] = "Solução não pode estar em branco!";
+            
 
-            $note = $this->model('Note');
-            $note->titulo = $_POST['titulo'];
-            $note->texto = $_POST['texto'];
-            $mensagem[] = $note->save();
+            else:
 
-        }
+                $note = $this->model('Note');
+                $note->titulo = $_POST['titulo'];
+                $note->texto = $_POST['texto'];
+                $mensagem[] = $note->save();
+                  
+            endif;
 
+        endif;
         $this->view('notes/criar', $dados = ['mensagem'=> $mensagem]);
-
     }
+
+        
+
+    
 
     public function excluir($id = ''){
         $mensagem = array();
