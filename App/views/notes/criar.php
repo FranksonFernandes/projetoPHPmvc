@@ -11,6 +11,6 @@ if(!empty($data['mensagem'])){
 
 <form action="/notes/criar" method="post">
     Título: <input type="text" name="titulo"> <br><br>
-    Solução: <textarea name="texto"> </textarea> <br>
+    Solução: <textarea name="texto"></textarea> <br>
     <button name="salvar"> Salvar </button>
 </form>

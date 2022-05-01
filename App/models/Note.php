@@ -59,6 +59,25 @@ class Note extends Model{
             return "Erro ao cadastrar!";
         }
     }
+
+    public function update($id){
+
+        $sql = "UPDATE NOTES SET TITULO = ?, TEXTO = ? WHERE ID = ?";
+        $stmt = Model::getConn()->prepare($sql); 
+        $stmt->bindValue(1, $this->titulo); 
+        $stmt->bindValue(2, $this->texto);
+        $stmt->bindValue(3, $id);
+
+        if($stmt->execute()){
+            return "Atualizado com sucesso!";
+        }
+
+        else{
+            return "Erro ao atualizar!";
+        }
+    }
+
+
     
     public function delete($id){
 
