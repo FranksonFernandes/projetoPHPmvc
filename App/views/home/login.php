@@ -1,3 +1,15 @@
+<br>
+
+<?php
+
+if(!empty($data['mensagem'])){
+    foreach($data['mensagem'] as $m){
+        echo $m."<br>";
+    }
+}
+?>
+
+
 <h1>Fazer Login</h1>
 
 <form action="/home/login" method="POST">
