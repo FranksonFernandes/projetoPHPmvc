@@ -8,7 +8,19 @@
 </head>
 <body>
     <h2>Gestão do conhecimento</h2>
-    <a href="/">Home </a>|<a href="/notes/criar"> Cadastrar novo</a>|<a href="/home/login"> Login</a>
+    <a href="/">Home </a>|<a href="/notes/criar"> Cadastrar novo</a>|
+    
+    <?php if(!isset($_SESSION['logado'])): ?>
+
+    <a href="/home/login"> Login</a>
+
+    <?php else: ?>
+        
+        Olá <?php echo $_SESSION['userName']; ?>
+        <a href="/home/logout"> Logout</a>
+        
+    <?php endif; ?>    
+
     <?php require_once '../App/views/'.$view.'.php';  ?>
 
 
