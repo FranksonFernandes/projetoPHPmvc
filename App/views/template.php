@@ -12,9 +12,13 @@
     
     <?php if(isset($_SESSION['logado'])): ?> <!-- Se estiver logado habilita "Cadastrar Novo" -->
 
-    <a href="/notes/criar"> Cadastrar novo</a>|
+        <a href="/notes/criar"> Cadastrar novo</a>|
+
+        <a href="/users/cadastrar"> Cadastrar Usuário</a>|
     
     <?php endif; ?>
+
+    
 
     <?php if(!isset($_SESSION['logado'])): ?>
 
