@@ -33,4 +33,9 @@ class Home extends Controller{
         $this->view('home/login', $dados = ['mensagem' => $mensagem]);
     }
 
+    public function logout(){
+
+        Auth::Logout();
+    }
+
 }

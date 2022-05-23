@@ -49,7 +49,7 @@ class Auth{
 
         if(!isset($_SESSION['logado'])){
             header('location: /home/login');
-
+            die; //Mata o script que esta sendo realizado sem que o usuário esteja logado
         }
     }
 
